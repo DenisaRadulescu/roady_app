@@ -29,7 +29,7 @@ class Gas:
                 html_text = response.text
 
             gas_prices_soup = BeautifulSoup(html_text, features="html.parser")
-            dates = gas_prices_soup.find_all("div", {"class": "stylelistrow"})
+            dates = gas_prices_soup.find_all("div", {"class": "location"})
             dates = [item.text for item in dates]
             prices = gas_prices_soup.find_all(id=search_for)
             prices = [price.text for price in prices]
